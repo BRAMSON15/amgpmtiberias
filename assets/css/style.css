@@ -1,0 +1,331 @@
+/* Elegant & Modern Theme for AMGPM Tiberias */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-primary: #0f172a; /* Deep elegant slate */
+    --bg-surface: rgba(30, 41, 59, 0.65); /* Glass surface */
+    --primary-color: #3b82f6; /* Elegant royal blue */
+    --secondary-color: #14b8a6; /* Teal accent */
+    --accent-glow: 0 0 20px rgba(59, 130, 246, 0.3);
+    --text-main: #ffffff; /* Clear, bright white */
+    --text-muted: #cbd5e1; /* Elegant light slate */
+    --border-glass: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body {
+    background-color: var(--bg-primary);
+    background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(20, 184, 166, 0.08), transparent 25%);
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+/* Sidebar styling (Futuristic Panel) */
+.sidebar {
+    background: rgba(10, 10, 12, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-right: var(--border-glass);
+    min-height: 100vh;
+    box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+.sidebar .nav-link {
+    color: var(--text-muted);
+    border-radius: 12px;
+    margin: 8px 16px;
+    padding: 14px 20px;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar .nav-link i {
+    width: 24px;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.sidebar .nav-link:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(5px);
+}
+
+.sidebar .nav-link:hover i {
+    color: var(--primary-color);
+    text-shadow: var(--accent-glow);
+}
+
+.sidebar .nav-link.active {
+    background: linear-gradient(90deg, rgba(59, 130, 246, 0.15), transparent);
+    color: var(--primary-color);
+    border-left: 4px solid var(--primary-color);
+    font-weight: 600;
+    box-shadow: var(--accent-glow);
+}
+
+.sidebar-heading {
+    padding: 40px 20px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: var(--border-glass);
+    margin-bottom: 24px;
+    color: var(--text-main);
+    line-height: 1.2;
+}
+
+.sidebar-heading span {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(5, 5, 5, 0.7) !important;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: var(--border-glass);
+    position: sticky;
+    top: 0;
+    z-index: 90;
+}
+
+.navbar .fw-bold {
+    color: var(--text-main);
+}
+
+/* Futuristic Cards */
+.card {
+    background: var(--bg-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-glass);
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--text-main);
+    overflow: hidden;
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.03), transparent);
+    transform: skewX(-20deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    left: 150%;
+}
+
+.card-header {
+    background: rgba(0,0,0,0.2) !important;
+    border-bottom: var(--border-glass);
+    padding: 24px 24px 16px;
+    color: var(--primary-color);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(59, 130, 246, 0.3);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6), var(--accent-glow);
+}
+
+/* Dashboard override */
+.bg-primary { background: linear-gradient(135deg, #0284c7, #38bdf8) !important; }
+.bg-warning { background: linear-gradient(135deg, #d97706, #fbbf24) !important; color: #fff !important; }
+.bg-info, .card[style*="background-color: #17a2b8"] { background: linear-gradient(135deg, #0d9488, #2dd4bf) !important; border:none;}
+.bg-success, .card[style*="background-color: #28a745"] { background: linear-gradient(135deg, #059669, #34d399) !important; border:none;}
+.text-dark { color: #fff !important; }
+.bg-light, .bg-white { background: rgba(255, 255, 255, 0.05) !important; color: white !important; }
+.text-primary { color: var(--primary-color) !important; }
+.text-muted { color: var(--text-muted) !important; }
+
+/* Buttons */
+.btn {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 10px 24px;
+    transition: all 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(20, 184, 166, 0.4);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.6);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+/* Tables */
+.table {
+    color: var(--text-main);
+    border-collapse: separate;
+    border-spacing: 0 8px;
+    margin-top: -8px;
+}
+.table thead th {
+    background: transparent !important;
+    color: var(--text-muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    border-bottom: var(--border-glass);
+    padding: 16px 20px;
+}
+.table tbody tr {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+.table tbody td {
+    padding: 16px 20px;
+    border: var(--border-glass);
+    border-style: solid none;
+    vertical-align: middle;
+}
+.table tbody td:first-child { border-left: var(--border-glass); border-top-left-radius: 12px; border-bottom-left-radius: 12px; }
+.table tbody td:last-child { border-right: var(--border-glass); border-top-right-radius: 12px; border-bottom-right-radius: 12px; }
+.table tbody tr:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    position: relative;
+    z-index: 10;
+}
+
+/* Formulir (Forms) */
+.form-control, .form-select {
+    background: rgba(0,0,0,0.3) !important;
+    border: var(--border-glass);
+    color: white !important;
+    border-radius: 12px;
+    padding: 14px 20px;
+}
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    background: rgba(0,0,0,0.5) !important;
+}
+
+/* Modals */
+.modal-content {
+    background: var(--bg-primary);
+    border: var(--border-glass);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+/* Login Page Holographic */
+.login-bg {
+    background: #000;
+    background-image: 
+        radial-gradient(ellipse at bottom, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at top, rgba(20, 184, 166, 0.15) 0%, transparent 50%),
+        url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    background: rgba(10, 10, 15, 0.7);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 30px;
+    padding: 50px 40px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.9), 0 0 30px rgba(56,189,248,0.1);
+    width: 100%;
+    max-width: 440px;
+    position: relative;
+}
+
+.login-logo {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-main);
+    font-weight: 800;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    line-height: 1.1;
+    text-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.login-logo span {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-top: 5px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Responsivitas Layar Kecil (Mobile) */
+@media (max-width: 767.98px) {
+    #sidebarCollapse.show {
+        position: absolute;
+        width: 100%;
+        z-index: 1050;
+        background: rgba(15, 23, 42, 0.98);
+        min-height: auto;
+        padding-bottom: 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    }
+    .content-wrapper {
+        padding: 15px !important;
+    }
+    .card-header h5 {
+        font-size: 1.1rem;
+    }
+    .table-responsive {
+        border-radius: 12px;
+        border: var(--border-glass);
+    }
+    .hero-section {
+        padding-top: 100px;
+    }
+    .modal-content {
+        margin: 10px;
+    }
+}
